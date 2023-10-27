@@ -20,6 +20,8 @@ unsigned int binary_to_uint(const char *b)
 	dec1 = 0;
 	dec2 = 0;
 
+	if (!b)
+		return (0);
 	for (len = 0 ; b[len] != '\0' ; len++)
 		;
 	for (i = len - 1 ; i >= 0 ; i--)
