@@ -2,24 +2,28 @@
 #include <stdlib.h>
 
 /**
- * main - entry point
- * @argc: character
- * @argv: character
+ *main-multiplies two no.s
+ *@argc:counter
+ *@argv:vector
+ *Return: 0 on success
  *
- * Description: -
- * Return: -
  */
+
 int main(int argc, char *argv[])
 {
-	int a, b;
+	int i;
+	int product = 1;
 
-	if (argc != 3)
+	if (argc > 2 && argc < 4)
+	{
+		for (i = 1 ; i < argc ; i++)
+			product = product * atoi(argv[i]);
+	printf("%d\n", product);
+	return (0);
+	}
+	else
 	{
 		printf("Error\n");
-		return (1);
+	return (1);
 	}
-	a = atoi(argv[1]);
-	b = atoi(argv[2]);
-	printf("%d\n", a * b);
-	return (0);
 }
