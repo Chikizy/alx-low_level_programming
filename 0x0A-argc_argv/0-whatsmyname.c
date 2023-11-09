@@ -1,16 +1,16 @@
 #include <stdio.h>
-
 /**
- * main - entry point
- * @argc: character
- * @argv: character
- *
- * Description: -
- * Return: -
+ *main - program prints the name of the program
+ *@argc:counter
+ *@argv:vector
+ *Return: always 0
  */
+
 int main(int argc, char *argv[])
 {
-	(void)argc;
-	printf("%s\n", argv[0]);
+	if (argc > 0)
+	{
+		printf("%s", argv[0]);
+	}
 	return (0);
 }
