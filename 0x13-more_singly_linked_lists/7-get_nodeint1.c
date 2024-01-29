@@ -9,13 +9,12 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	size_t count;
-	listint_t *temp = head;
+	unsigned int i;
 
-	for (count = 0 ; count < index && temp != NULL ; count++)
-		temp = temp->next;
-	if (temp == NULL)/* checks if index exceeds count i.e exceeds end of list*/
-		return (NULL);
-	else
-		return (temp);
+	for (i = 0; i < index && head != NULL; i++)
+	{
+		head = head->next;
+	}
+
+	return (head);
 }
