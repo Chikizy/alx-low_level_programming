@@ -3,28 +3,36 @@
 /**
  * create_file - creates a file
  * @filename: filename.
- * @text_content: content written in the file.
+ * @text_content: content writed in the file.
  *
  * Return: 1 if it success. -1 if it fails.
  */
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	size_t i;
-	ssize_t textwr;
+	int nletters;
+	int rwr;
 
 	if (!filename)
 		return (-1);
+
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-	if (fd < 0)
+
+	if (fd == -1)
 		return (-1);
-	if (text_content == NULL)
+
+	if (!text_content)
 		text_content = "";
-	for (i = 0; text_content[i] != '\0'; i++)
+
+	for (nletters = 0; text_content[nletters]; nletters++)
 		;
-	textwr = write(fd, text_content, i);
-	if (textwr < 0)
+
+	rwr = write(fd, text_content, nletters);
+
+	if (rwr == -1)
 		return (-1);
+
 	close(fd);
+
 	return (1);
 }
