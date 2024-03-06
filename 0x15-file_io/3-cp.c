@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to, close_file;
 	ssize_t bytesrd, byteswr;
-	char *buf[1024];
+	char buf[1024];
 
 	if (argc != 3)
 	{
